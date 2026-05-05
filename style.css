@@ -1,24 +1,20 @@
 body {
   font-family: Arial, sans-serif;
-  background-color: #f0f0f0;
   display: flex;
   justify-content: center;
-  align-items: center;
-  height: 100vh;
+  align-items: flex-start;
+  padding: 20px;
+  background-color: #f8f8f8;
 }
 
 #widget {
   display: flex;
-  background-color: #fff;
-  padding: 20px 25px;
-  border-radius: 12px;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  gap: 30px;
 }
 
 #info {
-  width: 200px;
-  margin-right: 30px;
-  line-height: 1.8;
+  line-height: 1.6;
+  font-size: 14px;
 }
 
 #calendar {
@@ -29,34 +25,35 @@ body {
 
 #month-title {
   font-weight: bold;
-  margin-bottom: 10px;
+  margin-bottom: 6px;
 }
 
-#weekdays {
-  display: grid;
-  grid-template-columns: repeat(7, 30px);
-  text-align: center;
-  margin-bottom: 5px;
-}
-
-#days-grid {
+#weekdays, #days-grid {
   display: grid;
   grid-template-columns: repeat(7, 30px);
   text-align: center;
 }
 
-.day {
-  margin: 2px 0;
-  position: relative;
+.day, .weekday {
+  width: 28px;
+  height: 28px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 2px;
+  border-radius: 50%;
 }
 
-.today::after {
-  content: '●';
-  color: #9C88B3;
-  position: absolute;
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  font-size: 14px;
-  line-height: 1;
+.day.today, .weekday.today {
+  background-color: #9C88B3;
+  color: #fff;
+  font-weight: bold;
+}
+
+.day.week-highlight {
+  background-color: #d6c1e8; /* 浅紫色，标记本周 */
+}
+
+.weekday {
+  font-weight: bold;
 }
