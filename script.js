@@ -10,6 +10,10 @@ function getWeekProgress(date){
   return Math.round(((date.getDay()+1)/7)*100);
 }
 
+function getWeekRemainingDays(date){
+  return 7 - date.getDay() - 1; // 周日=0，周六=6
+}
+
 function getYearProgress(date){
   const year = date.getFullYear();
   const start = firstWeekDate;
@@ -25,9 +29,11 @@ function getRemainingDays(date){
 function updateInfo(){
   const today = new Date();
   const weekdays = ['周日','周一','周二','周三','周四','周五','周六'];
-  document.getElementById('date-line').textContent = today.toISOString().slice(0,10).replace(/-/g,'/');
   const weekNum = getWeekNumber(today);
+
+  document.getElementById('date-line').textContent = today.toISOString().slice(0,10).replace(/-/g,'/');
   document.getElementById('week-day-line').textContent = `今天是第 ${weekNum} 周，${weekdays[today.getDay()]}`;
+  document.getElementById('week-remaining-days-line').textContent = `本周剩余：${getWeekRemainingDays(today)} 天`; // 新增
   document.getElementById('week-progress-line').textContent = `本周进度：${getWeekProgress(today)}%`;
   document.getElementById('remaining-days-line').textContent = `今年剩余：${getRemainingDays(today)} 天`;
   document.getElementById('year-progress-line').textContent = `本年进度：${getYearProgress(today)}%`;
