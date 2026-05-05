@@ -3,8 +3,7 @@ const firstWeekDate = new Date(2026,0,4); // 2026.1.4 周日
 
 function getWeekNumber(date){
   const diff = date - firstWeekDate;
-  const weekNum = Math.floor(diff / (7*24*60*60*1000)) + 1;
-  return weekNum;
+  return Math.floor(diff / (7*24*60*60*1000)) + 1;
 }
 
 function getWeekProgress(date){
@@ -74,5 +73,7 @@ function generateCalendar(){
 }
 
 // 初始化
-updateInfo();
-generateCalendar();
+window.addEventListener('DOMContentLoaded', ()=>{
+  updateInfo();
+  generateCalendar();
+});
