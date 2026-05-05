@@ -9,12 +9,12 @@ body {
 
 #widget {
   display: flex;
-  gap: 20px;
+  gap: 25px; /* 左右间距稍微增加 */
 }
 
 #info {
-  width: 180px;
-  line-height: 1.6;
+  width: 200px; /* 左边稍宽 */
+  line-height: 2; /* 增大行高，让左边和右边对齐 */
   font-size: 15px;
 }
 
@@ -26,7 +26,7 @@ body {
 
 #month-title {
   font-weight: bold;
-  margin-bottom: 5px;
+  margin-bottom: 6px;
 }
 
 #weekdays, #days-grid {
