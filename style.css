@@ -3,18 +3,19 @@ body {
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  padding: 20px;
+  padding: 10px;
   background-color: #f8f8f8;
 }
 
 #widget {
   display: flex;
-  gap: 30px;
+  gap: 20px;
 }
 
 #info {
+  width: 180px;
   line-height: 1.6;
-  font-size: 14px;
+  font-size: 15px;
 }
 
 #calendar {
@@ -25,23 +26,24 @@ body {
 
 #month-title {
   font-weight: bold;
-  margin-bottom: 6px;
+  margin-bottom: 5px;
 }
 
 #weekdays, #days-grid {
   display: grid;
-  grid-template-columns: repeat(7, 30px);
+  grid-template-columns: repeat(7, 28px);
   text-align: center;
 }
 
 .day, .weekday {
-  width: 28px;
-  height: 28px;
+  width: 26px;
+  height: 26px;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 2px;
+  margin: 1px;
   border-radius: 50%;
+  font-size: 13px;
 }
 
 .day.today, .weekday.today {
@@ -51,7 +53,7 @@ body {
 }
 
 .day.week-highlight {
-  background-color: #d6c1e8; /* 浅紫色，标记本周 */
+  background-color: #d6c1e8;
 }
 
 .weekday {
