@@ -9,11 +9,11 @@ body {
 
 #widget {
   display: flex;
-  gap: 25px; /* 左右间距稍微增加 */
+  gap: 25px;
 }
 
 #info {
-  width: 200px; /* 左边稍宽 */
+  width: 200px;
   line-height: 2; /* 增大行高，让左边和右边对齐 */
   font-size: 15px;
 }
