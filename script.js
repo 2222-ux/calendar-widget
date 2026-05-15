@@ -14,6 +14,16 @@ function getWeekRemainingDays(date){
   return 7 - date.getDay() - 1; // 周日=0，周六=6
 }
 
+function getMonthRemainingDays(date){
+  const lastDate = new Date(date.getFullYear(), date.getMonth()+1, 0).getDate();
+  return lastDate - date.getDate();
+}
+
+function getMonthProgress(date){
+  const lastDate = new Date(date.getFullYear(), date.getMonth()+1, 0).getDate();
+  return Math.round((date.getDate() / lastDate) * 100);
+}
+
 function getYearProgress(date){
   const year = date.getFullYear();
   const start = firstWeekDate;
@@ -33,8 +43,10 @@ function updateInfo(){
 
   document.getElementById('date-line').textContent = today.toISOString().slice(0,10).replace(/-/g,'/');
   document.getElementById('week-day-line').textContent = `今天是第 ${weekNum} 周，${weekdays[today.getDay()]}`;
-  document.getElementById('week-remaining-days-line').textContent = `本周剩余：${getWeekRemainingDays(today)} 天`; // 新增
+  document.getElementById('week-remaining-days-line').textContent = `本周剩余：${getWeekRemainingDays(today)} 天`;
   document.getElementById('week-progress-line').textContent = `本周进度：${getWeekProgress(today)}%`;
+  document.getElementById('month-remaining-days-line').textContent = `本月剩余：${getMonthRemainingDays(today)} 天`; // 新增
+  document.getElementById('month-progress-line').textContent = `本月进度：${getMonthProgress(today)}%`;        // 新增
   document.getElementById('remaining-days-line').textContent = `今年剩余：${getRemainingDays(today)} 天`;
   document.getElementById('year-progress-line').textContent = `本年进度：${getYearProgress(today)}%`;
 }
