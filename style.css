@@ -14,7 +14,7 @@ body {
 
 #info {
   width: 200px;
-  line-height: 1.5; /* 增大行高，让左边和右边对齐 */
+  line-height: 1.65; /* 增大行高，让左边和右边对齐 */
   font-size: 15px;
 }
 
